@@ -18,7 +18,7 @@ function List() {
       {productData.map(product => (
         <React.Fragment key={product.id}>
           <div>
-            Id: {product.id} <br />
+            Id: {product.title} <br />
             Title: {product.name} <br />
             Price: {product.price} <br />
             Stock: {product.isStock ? 'In Stock' : 'Out of Stock'}
@@ -29,6 +29,7 @@ function List() {
     </div>
   )
 }
+
 
 export default List;
 
