@@ -5,6 +5,10 @@ import ReactJSX from "./pages/ReactJSX"
 import StatefulCompoment from './pages/StatefulCompoment';
 import ComposeComponent from "./pages/ComposeComponent";
 import Props from './pages/Props';
+import HandleEvent from './pages/HandleEvent';
+import ConditionalRendering from './pages/ConditionalRendering';
+import GuestGreeting from './pages/GuestGreeting';
+import List from './pages/List';
 
 // components
 import Button from "./components/Button"
@@ -47,6 +51,22 @@ function App() {
       <br />
       <h2>State Component</h2>
       <State dateTime={dateTime} />
+
+      <br />
+      <h2>HandleEvent Component</h2>
+      <HandleEvent />
+
+      <br />
+      <h2>ConditionalRendering</h2>
+      <ConditionalRendering />
+
+      <br />
+      <h2>Sample App: GuestGreeting</h2>
+      <GuestGreeting />
+
+      <br />
+      <h2>List</h2>
+      <List />
     </>
   )
 }
