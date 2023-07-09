@@ -10,22 +10,22 @@ function List() {
   const productData = products.map(product => ({
     ...product,
     id: uuidv4()
-  }))
+  })).map(product => (
+    <React.Fragment key={product.id}>
+      <div>
+        Id: {product.id} <br />
+        Title: {product.name} <br />
+        Price: {product.price} <br />
+        Stock: {product.isStock ? 'In Stock' : 'Out of Stock'}
+      </div>
+      <hr />
+    </React.Fragment>
+  ))
   console.log('List: ', { productData })
 
   return (
     <div>
-      {productData.map(product => (
-        <React.Fragment key={product.id}>
-          <div>
-            Id: {product.id} <br />
-            Title: {product.name} <br />
-            Price: {product.price} <br />
-            Stock: {product.isStock ? 'In Stock' : 'Out of Stock'}
-          </div>
-          <hr />
-        </React.Fragment>
-      ))}
+      {productData}
     </div>
   )
 }

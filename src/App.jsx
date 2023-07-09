@@ -9,6 +9,9 @@ import HandleEvent from './pages/HandleEvent';
 import ConditionalRendering from './pages/ConditionalRendering';
 import GuestGreeting from './pages/GuestGreeting';
 import List from './pages/List';
+import Styles from './pages/Styles';
+import GenerateBox from './pages/GenerateBox';
+import  LiftingDropDriling from './pages/LiftingDropDriling';
 
 // components
 import Button from "./components/Button"
@@ -67,6 +70,18 @@ function App() {
       <br />
       <h2>List</h2>
       <List />
+
+      <br />
+      <h2>Styles</h2>
+      <Styles />
+
+      <br />
+      <h2>Sample App: GenerateBox</h2>
+      <GenerateBox />
+
+      <br/>
+      <h2>LiftingDropDirling</h2>
+      <LiftingDropDriling />
     </>
   )
 }

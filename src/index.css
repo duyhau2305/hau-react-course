@@ -7,3 +7,15 @@
 body {
   margin: 20px;
 }
+
+.normal {
+  color: lawngreen;
+}
+
+.notice {
+  color: #f00;
+}
+
+.italic {
+  font-style: italic;
+}

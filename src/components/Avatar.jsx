@@ -1,9 +1,16 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 
+import styles from './avatar.module.css'
+
 function Avatar({ url }) {
   return (
-   <img src={url} />
+    <div className={
+      // styles['button--primary']
+      styles.button_secondary
+    }>
+      <img src={url} />
+    </div>
   )
 }
 
