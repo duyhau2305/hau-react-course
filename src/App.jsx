@@ -16,6 +16,7 @@ import  LiftingDropDriling from './pages/LiftingDropDriling';
 // components
 import Button from "./components/Button"
 import State from "./pages/State";
+import Form from './pages/Form';
 
 function App() {
   const [dateTime, setDateTime] = React.useState(Date.now()); // local state of component App
@@ -82,6 +83,15 @@ function App() {
       <br/>
       <h2>LiftingDropDirling</h2>
       <LiftingDropDriling />
+
+      <br />
+      <h2>Form</h2>
+      <Form />
+
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   )
 }

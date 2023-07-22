@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 // components
 import TodoList from './TodoList';
 import TodoForm from './TodoForm';
+import TodoTotal from './TodoTotal';
 
 function Todos() {
   // states
@@ -31,6 +32,7 @@ function Todos() {
     <>
       <TodoForm addItem={addItem} />
       <br />
+      <TodoTotal todos={todos} />
       <TodoList todos={todos} deleteItem={deleteItem} />
     </>
   )
