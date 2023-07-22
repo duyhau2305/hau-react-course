@@ -12,6 +12,8 @@ import List from './pages/List';
 import Styles from './pages/Styles';
 import GenerateBox from './pages/GenerateBox';
 import  LiftingDropDriling from './pages/LiftingDropDriling';
+import BoxColor from './pages/BoxColor';
+import StateHook from './pages/StateHook';
 
 // components
 import Button from "./components/Button"
@@ -88,6 +90,12 @@ function App() {
       <h2>Form</h2>
       <Form />
 
+      <br />
+      <h2>Sample App: Box Color</h2>
+      <BoxColor />
+
+      <br />
+      <StateHook />
       <br />
       <br />
       <br />
