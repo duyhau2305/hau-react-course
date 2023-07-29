@@ -11,9 +11,10 @@ import GuestGreeting from './pages/GuestGreeting';
 import List from './pages/List';
 import Styles from './pages/Styles';
 import GenerateBox from './pages/GenerateBox';
-import  LiftingDropDriling from './pages/LiftingDropDriling';
+import  LiftingStateUp from './pages/LiftingStateUp';
 import BoxColor from './pages/BoxColor';
 import StateHook from './pages/StateHook';
+import UseReducer from './pages/UseReducer';
 
 // components
 import Button from "./components/Button"
@@ -83,8 +84,8 @@ function App() {
       <GenerateBox />
 
       <br/>
-      <h2>LiftingDropDirling</h2>
-      <LiftingDropDriling />
+      <h2>LiftingStateUp</h2>
+      <LiftingStateUp />
 
       <br />
       <h2>Form</h2>
@@ -96,6 +97,9 @@ function App() {
 
       <br />
       <StateHook />
+
+      <br />
+      <UseReducer />
       <br />
       <br />
       <br />
