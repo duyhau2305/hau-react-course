@@ -19,3 +19,27 @@ body {
 .italic {
   font-style: italic;
 }
+
+.boxColor {
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.boxColor div {
+  height: 50px;  
+  width: 45%;
+  margin: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}

@@ -1,72 +1,38 @@
 import React, { useState } from 'react';
 import './BoxColor.css';
 
+const boxColors = [
+  { id: 1, text: 'box 1', className: 'red', originalColor: 'red' },
+  { id: 2, text: 'box 2', className: 'yellow', originalColor: 'yellow' },
+  { id: 3, text: 'box 3', className: 'aqua', originalColor: 'aqua' },
+  { id: 4, text: 'box 4', className: 'purple', originalColor: 'purple' },
+]
+
 function BoxColor() {
-  const colors = ['red', 'gold', 'aqua', 'purple'];
-  const colorNames = ['Đỏ', 'Gold', 'Xanh', 'Tím'];
+  const [currentColor, setCurrentColor] = useState(null);
 
-  // Initialize the state for each block
-  const [blockColors, setBlockColors] = useState({
-    red: 'red',
-    gold: 'gold',
-    aqua: 'aqua',
-    purple: 'purple',
-  });
-
-  const handleClick = (color) => {
-    if (blockColors[color] === 'red') {
-      // Set all blocks to red
-      setBlockColors({
-        red: 'red',
-        gold: 'red',
-        aqua: 'red',
-        purple: 'red',
-      });
-    } else if (blockColors[color] === 'gold') {
-      // Set all blocks to red
-      setBlockColors({
-        red: 'gold',
-        gold: 'gold',
-        aqua: 'gold',
-        purple: 'gold',
-      });
-    } else if  (blockColors[color] === 'aqua') {
-      // Set all blocks to red
-      setBlockColors({
-        red: 'aqua',
-        gold: 'aqua',
-        aqua: 'aqua',
-        purple: 'aqua',
-      }); 
-    }else if  (blockColors[color] === 'purple') {
-        // Set all blocks to red
-        setBlockColors({
-          red: 'purple',
-          gold: 'purple',
-          aqua: 'purple',
-          purple: 'purple',
-        });
-      } else {
-      // Set all blocks to their default colors
-      setBlockColors({
-        red: 'red',
-        gold: 'gold',
-        aqua: 'aqua',
-        purple: 'purple',
-      });
+  function handleChangeColor(color) {
+    if(currentColor === color) {
+      setCurrentColor(null)
+      return;
     }
-  };
+    setCurrentColor(color); // null
+  }
 
   return (
-    <div className="container">
-      {colors.map((color, number) => (
+    <div className="boxColor">
+      {boxColors.map(box => (
         <div
-          className={`block ${blockColors[color]}`}
-          onClick={() => handleClick(color)}
+          style={{
+            backgroundColor: currentColor === box.originalColor ? box.originalColor : currentColor
+          }}
+          className={box.className}
+          onClick={() => handleChangeColor(box.originalColor)}
         >
-          {colorNames[number]}
+          {box.text}
         </div>
       ))}
+          
     </div>
   );
 }; 
