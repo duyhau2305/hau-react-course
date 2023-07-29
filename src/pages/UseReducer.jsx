@@ -8,6 +8,7 @@ const SHOW_LOADING = 'TODO/SHOW_LOADING';
 const HIDE_LOADING = 'TODO/HIDE_LOADING';
 const ADD_ITEM = 'TODO/ADD_ITEM';
 const SET_TITLE = 'TODO/SET_TITLE';
+const DELETE_ITEM = 'TODO/DELETE_ITEM'
 
 // initial state
 const initialState = {
@@ -43,6 +44,15 @@ function setTitle(payload) {
   }
 }
 
+function deleteItem(payload) {
+  return {
+    type: DELETE_ITEM,
+    payload: {
+      todos: payload
+    }
+  }
+}
+
 // reducer
 function reducer(state = initialState, { type, payload }) {
   switch (type) {
@@ -66,6 +76,12 @@ function reducer(state = initialState, { type, payload }) {
         ...state,
         title: payload
       }
+    case DELETE_ITEM: {
+      return {
+        ...state,
+        todos: payload.todos
+      }
+    }
     default: 
       return state;
   }
@@ -97,6 +113,13 @@ function UseReducer() {
     // }, 1000)
   }
 
+  function handleDelete(todoId) {
+    const clonedTodo = [...todos];
+    const index = clonedTodo.findIndex(todo => todo.id === todoId);
+    clonedTodo.splice(index, 1);
+    dispatch(deleteItem(clonedTodo))
+  }
+
   return (
     <div>
       <h1>UseReducer</h1>
@@ -121,7 +144,7 @@ function UseReducer() {
                 <div>
                   Id: {todo.id} <br />
                   Title: {todo.text} <br />
-                  <Button text="Delete" handleClick={() => {}}  />
+                  <Button text="Delete" handleClick={() => handleDelete(todo.id)}  />
                 </div>
                 <hr />
               </>
