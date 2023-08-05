@@ -15,6 +15,7 @@ import  LiftingStateUp from './pages/LiftingStateUp';
 import BoxColor from './pages/BoxColor';
 import StateHook from './pages/StateHook';
 import UseReducer from './pages/UseReducer';
+import UseEffect from './pages/UseEffect';
 
 // components
 import Button from "./components/Button"
@@ -101,6 +102,9 @@ function App() {
       <br />
       <UseReducer />
       <br />
+
+      <br />
+      <UseEffect />
       <br />
       <br />
       <br />
