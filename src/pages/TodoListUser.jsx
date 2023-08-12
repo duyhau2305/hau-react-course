@@ -38,6 +38,7 @@ const TodoListUser = () => {
 
   return (
     <div>
+      <h2>TodoList userReducer</h2>
       <input
         type="text"
         value={text}
@@ -47,7 +48,6 @@ const TodoListUser = () => {
       <button onClick={handleAddClick} disabled={state.isLoading}>
         Add
       </button>
-      <h2>TodoList userReducer</h2>
       {state.isLoading ? <p>Loading...</p> : null}
       <ul style={{ listStyle: 'none', margin: 2 }}> {/* Inline styling */}
         {state.todos.map(todo => (

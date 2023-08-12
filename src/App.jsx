@@ -16,6 +16,7 @@ import BoxColor from './pages/BoxColor';
 import StateHook from './pages/StateHook';
 import UseReducer from './pages/UseReducer';
 import UseEffect from './pages/UseEffect';
+import ContextHook from './pages/ContextHook/ContextHook';
 
 // components
 import Button from "./components/Button"
@@ -111,6 +112,10 @@ function App() {
       
       <TodoListUser />
       <br />
+
+      <ContextHook />
+
+
       <br />
     </>
   )
