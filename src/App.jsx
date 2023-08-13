@@ -17,6 +17,7 @@ import StateHook from './pages/StateHook';
 import UseReducer from './pages/UseReducer';
 import UseEffect from './pages/UseEffect';
 import ContextHook from './pages/ContextHook/ContextHook';
+import RefHook from './pages/RefHook';
 
 // components
 import Button from "./components/Button"
@@ -114,6 +115,9 @@ function App() {
       <br />
 
       <ContextHook />
+
+      <br/> 
+      <RefHook />
 
 
       <br />
