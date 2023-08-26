@@ -18,6 +18,7 @@ import UseReducer from './pages/UseReducer';
 import UseEffect from './pages/UseEffect';
 import ContextHook from './pages/ContextHook/ContextHook';
 import RefHook from './pages/RefHook';
+import PerformanceHook from './pages/PerformanceHook';
 
 // components
 import Button from "./components/Button"
@@ -27,18 +28,41 @@ import TodoListUser from './pages/TodoListUser';
 
 function App() {
   const [dateTime, setDateTime] = React.useState(Date.now()); // local state of component App
+  const [book, setBook] = React.useState({
+    name: "ReactJS",
+    price: 100,
+    releaseDate: Date.now()
+  })
   
   console.log("App Component")
 
   function handleRender() {
     setDateTime(Date.now())
+    setBook(prevState => ({
+      ...prevState,
+      price: prevState.price + 1
+    }))
   }
+
+  // function will re-created every time the component re-render
+  const handleChangeBook = React.useCallback(() => {
+    console.log("handleChangeBook: ", dateTime)
+    setBook(prevState => ({
+      ...prevState,
+      price: prevState.price + 10
+    }))
+  }, [dateTime])
+
+  const getNumber = React.useMemo(() => {
+    return book.price + 10;
+  }, [book.price])
 
   return (
     <>
-      <h1>Vite + React</h1>
+      <h1>Vite + React</h1> <br />
+      UseMemo: {getNumber}
 
-      <Button handleClick={handleRender} />
+      <Button text="Force Update" handleClick={handleRender} />
 
 
       <h2>React JSX</h2>
@@ -119,6 +143,12 @@ function App() {
       <br/> 
       <RefHook />
 
+      <br />
+      <PerformanceHook 
+        name={book.name} 
+        price={book.price} 
+        handleChangeBook={handleChangeBook}
+      />
 
       <br />
     </>
