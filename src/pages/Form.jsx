@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Button from '../components/Button';
+import { useResizeWindow } from '../hooks/useResizeWindow';
 
 function Form() {
   const [form, setForm] = React.useState({
@@ -9,7 +10,8 @@ function Form() {
     gender: 'male'
   });
   const refFirstName = React.useRef(null);
-
+  const { isSmallScreen } = useResizeWindow();
+  
   function onSubmit() {
     setForm(prevState => ({
       ...prevState,
@@ -28,6 +30,7 @@ function Form() {
 
   return (
     <div>
+      <h4>Demo custom hooks with small screen: {isSmallScreen ? 'small screen' : 'large screen'}</h4>
       <h4>Uncontroller Component</h4>
       <input ref={refFirstName} defaultValue="tony" type="text" /> 
 
