@@ -46,3 +46,22 @@ body {
 .li {
   list-style:none;
 }
+
+ul {
+  margin: 0;
+  display: flex;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+a {
+  color: #000;
+}
+
+a.active {
+  color: #f00
+}

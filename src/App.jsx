@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, NavLink, Routes, Route } from 'react-router-dom';
 
 // pages
 import ReactJSX from "./pages/ReactJSX"
@@ -25,6 +26,10 @@ import Button from "./components/Button"
 import State from "./pages/State";
 import Form from './pages/Form';
 import TodoListUser from './pages/TodoListUser';
+import ReactJSXDetail from './pages/ReactJSXDetail';
+import User from './pages/User/User';
+import Profile from './pages/User/Profile';
+import Account from './pages/User/Account';
 
 function App() {
   const [dateTime, setDateTime] = React.useState(Date.now()); // local state of component App
@@ -60,20 +65,40 @@ function App() {
   return (
     <>
       <h1>Vite + React</h1> <br />
-      UseMemo: {getNumber}
+      UseMemo: {getNumber} 
 
       <Button text="Force Update" handleClick={handleRender} />
+      <br /><br />
+      <ul>
+        <li>
+          <Link to="/react-jsx">React JSX</Link>
+        </li>
+        <li>
+          <NavLink to="/statefull-component">Stateful Component</NavLink>
+        </li>
+        <li>
+          <NavLink to="/user">User</NavLink>
+        </li>
+      </ul>
 
+      <br />
+      <div>
+        <Routes>
+          <Route path="/react-jsx" element={<ReactJSX />} />
+          <Route path="/react-jsx/:id" element={<ReactJSXDetail />} />
+          <Route path="/statefull-component" element={<StatefulCompoment />} />
+          {/* <Route path="/user" element={<User />} />
+          <Route path="/user/profile" element={<Profile />} />
+          <Route path="/user/account" element={<Account />} /> */}
+          <Route path="/user" element={<User />}>
+            <Route path="profile" element={<Profile />} />
+            <Route path="account" element={<Account />} />
+          </Route>
+        </Routes>
+      </div>
 
-      <h2>React JSX</h2>
-      <ReactJSX />
-      <br />
-      <Button />
-      <br />
+      <hr />
 
-      <br />
-      <h2>Stateful Component</h2>
-      <StatefulCompoment />
 
       <br />
       <h2>ComposeComponent</h2>

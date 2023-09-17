@@ -2,6 +2,7 @@ import React from 'react'
 
 // components
 import Button from "../components/Button"
+import { Link } from 'react-router-dom';
 
 function ReactJSX() {
   const user = {
@@ -31,7 +32,6 @@ function ReactJSX() {
     // One Top Level Element
     // React Fragment
     <> 
-      <div>ReactJSX</div> <br />
 
       {name} <br /><br />
 
@@ -50,6 +50,11 @@ function ReactJSX() {
 
       <Button text="Demo Stateless component" type="button" />
       <br />
+      <br />
+
+      <div>
+        <Link to="/react-jsx/1">Go to ReactJSX Detail</Link>
+      </div>
 
     </>
   )
