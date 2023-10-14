@@ -31,6 +31,7 @@ import User from './pages/User/User';
 import Profile from './pages/User/Profile';
 import Account from './pages/User/Account';
 import UserDetail from './pages/User/UserDetail';
+import AuthRoute from './components/route/AuthRoute'
 
 function App() {
   const [dateTime, setDateTime] = React.useState(Date.now()); // local state of component App
@@ -87,11 +88,11 @@ function App() {
         <Routes>
           <Route path="/react-jsx" element={<ReactJSX />} />
           <Route path="/react-jsx/:id" element={<ReactJSXDetail />} />
-          <Route path="/statefull-component" element={<StatefulCompoment />} />
+          <Route path="/statefull-component" element={<AuthRoute><StatefulCompoment /></AuthRoute>} />
           {/* <Route path="/user" element={<User />} />
           <Route path="/user/profile" element={<Profile />} />
           <Route path="/user/account" element={<Account />} /> */}
-          <Route path="/user" element={<User />}>
+          <Route path="/user" element={<AuthRoute><User /></AuthRoute>}>
             <Route path="profile" element={<Profile />} />
             <Route path="account" element={<Account />} />
             {/* xxx/123/product/53 */}
