@@ -20,6 +20,7 @@ import UseEffect from './pages/UseEffect';
 import ContextHook from './pages/ContextHook/ContextHook';
 import RefHook from './pages/RefHook';
 import PerformanceHook from './pages/PerformanceHook';
+import Portal from './pages/Portal';
 
 // components
 import Button from "./components/Button"
@@ -181,6 +182,7 @@ function App() {
       />
 
       <br />
+      <Portal />
     </>
   )
 }
