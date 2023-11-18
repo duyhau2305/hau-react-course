@@ -21,6 +21,7 @@ import ContextHook from './pages/ContextHook/ContextHook';
 import RefHook from './pages/RefHook';
 import PerformanceHook from './pages/PerformanceHook';
 import Portal from './pages/Portal';
+import CssInJs from './pages/CssInJs';
 
 // components
 import Button from "./components/Button"
@@ -82,6 +83,9 @@ function App() {
         <li>
           <NavLink to="/user">User</NavLink>
         </li>
+        <li>
+          <NavLink to="/css-in-js">Css In Js</NavLink>
+        </li>
       </ul>
 
       <br />
@@ -93,6 +97,7 @@ function App() {
           {/* <Route path="/user" element={<User />} />
           <Route path="/user/profile" element={<Profile />} />
           <Route path="/user/account" element={<Account />} /> */}
+          <Route path="/css-in-js" element={<CssInJs />} />
           <Route path="/user" element={<AuthRoute><User /></AuthRoute>}>
             <Route path="profile" element={<Profile />} />
             <Route path="account" element={<Account />} />
