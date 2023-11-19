@@ -34,6 +34,7 @@ import Profile from './pages/User/Profile';
 import Account from './pages/User/Account';
 import UserDetail from './pages/User/UserDetail';
 import AuthRoute from './components/route/AuthRoute'
+import TestResfulApi from './pages/TestResfulApi';
 
 function App() {
   const [dateTime, setDateTime] = React.useState(Date.now()); // local state of component App
@@ -86,6 +87,9 @@ function App() {
         <li>
           <NavLink to="/css-in-js">Css In Js</NavLink>
         </li>
+        <li>
+          <NavLink to="/test-resfulapi">Test Resful API</NavLink>
+        </li>
       </ul>
 
       <br />
@@ -98,6 +102,7 @@ function App() {
           <Route path="/user/profile" element={<Profile />} />
           <Route path="/user/account" element={<Account />} /> */}
           <Route path="/css-in-js" element={<CssInJs />} />
+          <Route path="/test-resfulapi" element={<TestResfulApi />} />
           <Route path="/user" element={<AuthRoute><User /></AuthRoute>}>
             <Route path="profile" element={<Profile />} />
             <Route path="account" element={<Account />} />
