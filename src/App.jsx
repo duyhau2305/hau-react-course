@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink, Routes, Route } from 'react-router-dom';
+import { ErrorBoundary } from "react-error-boundary";
 
 // pages
 import ReactJSX from "./pages/ReactJSX"
@@ -67,8 +68,24 @@ function App() {
     return book.price + 10;
   }, [book.price])
 
+  function fallbackRender({ error, resetErrorBoundary }) {
+    // Call resetErrorBoundary() to reset the error boundary and retry the render.
+  
+    return (
+      <div role="alert">
+        <p>Something went wrong:</p>
+        <pre style={{ color: "red" }}>{error.message}</pre>
+      </div>
+    );
+  }
+
   return (
-    <>
+    <ErrorBoundary
+      fallbackRender={fallbackRender}
+      onReset={(details) => {
+        // Reset the state of your app so the error doesn't happen again
+      }}
+    >
       <h1>Vite + React</h1> <br />
       UseMemo: {getNumber} 
 
@@ -193,7 +210,7 @@ function App() {
 
       <br />
       <Portal />
-    </>
+    </ErrorBoundary>
   )
 }
 
